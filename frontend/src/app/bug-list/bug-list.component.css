@@ -1,0 +1,32 @@
+.bug-table-wrapper {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .bug-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+  }
+  
+  .bug-table th,
+  .bug-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+  
+  .bug-table th {
+    background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .bug-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  

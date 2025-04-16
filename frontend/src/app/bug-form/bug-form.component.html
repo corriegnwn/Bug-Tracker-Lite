@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="bug-form">
+    <div class="form-row">
+      <label for="title">Titel</label>
+      <input
+        id="title"
+        formControlName="title"
+        type="text"
+        placeholder="Titel des Bugs"
+      />
+      <div *ngIf="form.get('title')?.invalid && form.get('title')?.touched" class="error">
+        Titel ist erforderlich.
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <label for="description">Beschreibung</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        placeholder="Beschreibe den Bug"
+      ></textarea>
+      <div *ngIf="form.get('description')?.invalid && form.get('description')?.touched" class="error">
+        Beschreibung ist erforderlich.
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <label for="priority">Priorität</label>
+      <select id="priority" formControlName="priority">
+        <option value="">Priorität wählen</option>
+        <option value="low">Niedrig</option>
+        <option value="medium">Mittel</option>
+        <option value="high">Hoch</option>
+      </select>
+      <div *ngIf="form.get('priority')?.invalid && form.get('priority')?.touched" class="error">
+        Priorität ist erforderlich.
+      </div>
+    </div>
+  
+    <div class="button-wrapper">
+      <button type="submit" [disabled]="form.invalid">Bug erstellen</button>
+    </div>
+  </form>
+  
